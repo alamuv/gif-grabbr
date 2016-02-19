@@ -1,18 +1,21 @@
 const path = require('path');
 
 module.exports = {
-  entry: './react/bundle.js',
-  output: {path: __dirname, filename: 'output.js'},
+  entry: './src/main.js',
+  output: {
+    path: path.join(__dirname, 'build'),
+    publicPath: '/assets/',
+    filename: 'bundle.js'},
   module: {
     loaders: [
       {
         test: /.js$/,
-        loader: 'babel-loader',
+        loader: 'babel',
         exclude: /node_modules/,
         query: {
           presets: ['es2015','react']
         },
-      }, 
+      },
     ]
   }
 };

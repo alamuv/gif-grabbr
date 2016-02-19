@@ -3,8 +3,8 @@ const ReactDOM = require('react-dom');
 
 class TestComponent extends React.Component {
   render () {
-    return <div>Hello World!</div>; 
+    return <div>cool</div>; 
   }
 }
 
-ReactDOM.render(<TestComponent />, document.getElementById('hello'));
+ReactDOM.render(<TestComponent />, document.getElementById('react'));
