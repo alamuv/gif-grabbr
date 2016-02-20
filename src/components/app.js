@@ -29,7 +29,8 @@ class App extends React.Component {
   render () {
     return (
       <div style={styles}>
-        <h1>GIFGrabbr</h1>
+        <h1>gif grabbr</h1>
+        <p>search for a sticker on <a href='http://giphy.com'>giphy</a>. Press enter to get another sticker.</p>
         <div>
           <SearchBar onSearch={this.handleSearch}/>
         </div>
