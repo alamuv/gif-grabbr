@@ -12,7 +12,7 @@ const styles = {
 module.exports = 
 class App extends React.Component {
   state = {
-    loading: false,
+    loading: true,
     term: '',
     sticker: {}
   }
