@@ -4,7 +4,6 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.join(__dirname, 'build'),
-    publicPath: '/assets/',
     filename: 'bundle.js'},
   module: {
     loaders: [
