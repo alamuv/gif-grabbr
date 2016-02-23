@@ -1,5 +1,5 @@
 const React = require('react');
-const getSticker = require('utils/getSticker');
+const getGif = require('utils/getGif');
 const SearchBar = require('components/searchBar');
 const ImageDisplay = require('components/imageDisplay');
 
@@ -14,14 +14,14 @@ class App extends React.Component {
   state = {
     loading: true,
     term: '',
-    sticker: {}
+    gif: {}
   }
 
   handleSearch = term => {
     this.setState({loading: true});
     if(term.length > 2) {
-      getSticker(term).then((sticker) => {
-        this.setState({loading: false, sticker, term});
+      getGif(term).then((gif) => {
+        this.setState({loading: false, gif, term});
       })
     }
   }
@@ -36,9 +36,9 @@ class App extends React.Component {
         </div>
         <ImageDisplay 
           loading={this.state.loading} 
-          url={this.state.sticker.url} 
-          width={this.state.sticker.width}
-          sourceUrl={this.state.sticker.sourceUrl}
+          url={this.state.gif.url} 
+          width={this.state.gif.width}
+          sourceUrl={this.state.gif.sourceUrl}
           />
       </div>
     );
