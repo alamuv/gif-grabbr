@@ -1,6 +1,6 @@
 const axios = require('axios');
 // sample: http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=oops
-const GIPHY_API_URL = `http://api.giphy.com`;
+const GIPHY_API_URL = `https://api.giphy.com`;
 const GIPHY_PUB_KEY = `dc6zaTOxFJmzC`;
 
 module.exports = function getSticker (tagName) {
