@@ -4,7 +4,7 @@ const GIPHY_API_URL = `http://api.giphy.com`;
 const GIPHY_PUB_KEY = `dc6zaTOxFJmzC`;
 
 module.exports = function getSticker (tagName) {
-  const url = `${GIPHY_API_URL}/v1/stickers/random?api_key=${GIPHY_PUB_KEY}&tag=${tagName}`;
+  const url = `${GIPHY_API_URL}/v1/gifs/random?api_key=${GIPHY_PUB_KEY}&tag=${tagName}`;
   return new Promise((resolve, reject) => {
     axios.get(url)
       .then((response) => {

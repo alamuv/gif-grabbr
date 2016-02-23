@@ -30,11 +30,16 @@ class App extends React.Component {
     return (
       <div style={styles}>
         <h1>gif grabbr</h1>
-        <p>search for a sticker on <a href='http://giphy.com'>giphy</a>. Press enter to get another sticker.</p>
+        <p>find a GIF on <a href='http://giphy.com'>giphy</a>. Keep pressing enter for more results.</p>
         <div>
           <SearchBar onSearch={this.handleSearch}/>
         </div>
-        <ImageDisplay loading={this.state.loading} url={this.state.sticker.url} width={this.state.sticker.width}/>
+        <ImageDisplay 
+          loading={this.state.loading} 
+          url={this.state.sticker.url} 
+          width={this.state.sticker.width}
+          sourceUrl={this.state.sticker.sourceUrl}
+          />
       </div>
     );
   }
