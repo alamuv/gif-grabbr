@@ -9,7 +9,7 @@ const styles = {
   width: 500
 }
 
-module.exports = 
+module.exports =
 class App extends React.Component {
   state = {
     loading: true,
@@ -19,11 +19,9 @@ class App extends React.Component {
 
   handleSearch = term => {
     this.setState({loading: true});
-    if(term.length > 2) {
-      getGif(term).then((gif) => {
-        this.setState({loading: false, gif, term});
-      })
-    }
+    this.props.getGif(term).then((gif) => {
+      this.setState({loading: false, gif, term});
+    })
   }
   
   render () {
@@ -34,9 +32,9 @@ class App extends React.Component {
         <div>
           <SearchBar onSearch={this.handleSearch}/>
         </div>
-        <ImageDisplay 
-          loading={this.state.loading} 
-          url={this.state.gif.url} 
+        <ImageDisplay
+          loading={this.state.loading}
+          url={this.state.gif.url}
           width={this.state.gif.width}
           sourceUrl={this.state.gif.sourceUrl}
           />

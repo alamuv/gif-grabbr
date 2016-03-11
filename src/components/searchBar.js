@@ -11,7 +11,10 @@ class SearchBar extends React.Component {
   handleChange = (evt) => {
     const term = evt.target.value;
     this.setState({searchTerm: term});
-    this.props.onSearch(term);
+
+    if (term.length > 2) {
+      this.props.onSearch(term);
+    }
   }
 
   handleKeyUp = (evt) => {

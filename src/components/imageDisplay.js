@@ -13,12 +13,12 @@ class ImageDisplay extends React.Component {
   }
 
   render () {
-    const url = this.props.loading ? "loading.gif" : this.props.url;
+    const url = this.props.loading ? 'loading.gif' : this.props.url;
     const width = this.props.width || 200;
     return (
       <div style={styles}>
         <a href={this.giphySourceUrl()} title='view this on giphy' target='new'>
-          <img src={url} width={width} />
+          <img id='gif' src={url} width={width} />
         </a>
       </div>
     );

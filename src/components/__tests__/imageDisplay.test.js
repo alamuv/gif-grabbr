@@ -1,5 +1,5 @@
 const React = require('react');
-const {shallow, mount, render} = require('enzyme');
+const {shallow} = require('enzyme');
 const ImageDisplay = require('components/imageDisplay');
 
 const DEFAULT_WIDTH = 200;
@@ -10,7 +10,18 @@ describe('ImageDisplay', () => {
       loading: true
     };
     const wrapper = shallow(<ImageDisplay {...props}/>);
-    assert.equal(wrapper.prop('src'), LOADING_GIF);
-    assert.equal(wrapper.prop('width'), DEFAULT_WIDTH);
+    const image = wrapper.find('img');
+    
+    assert.equal(image.prop('src'), LOADING_GIF);
+    assert.equal(image.prop('width'), DEFAULT_WIDTH);
+  });
+
+  it('Renders an image when passed a url', () => {
+    const props = {
+      url: 'http://www.example.com/pusheen.gif'
+    }
+    const wrapper = shallow(<ImageDisplay {...props}/>);
+    const image = wrapper.find({src: 'http://www.example.com/pusheen.gif'});
+    assert.equal(image.length, 1);
   });
 })
