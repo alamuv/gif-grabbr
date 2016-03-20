@@ -1,6 +1,6 @@
 const React = require('react');
 
-const styles = {fontSize: '2em'};
+const styles = {fontSize: '2em', width: '90%', maxWidth: '300px'};
 
 module.exports =
 class SearchBar extends React.Component {

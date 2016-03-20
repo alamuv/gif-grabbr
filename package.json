@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack",
     "postinstall": "npm run build",
-    "devserve": "webpack-dev-server --inline --hot --no-info --content-base build/",
+    "devserve": "webpack-dev-server --host 0.0.0.0 --inline --hot --no-info --content-base build/",
     "test": "NODE_ENV=test karma start"
   },
   "author": "brewhouse.io",

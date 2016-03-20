@@ -6,7 +6,7 @@ const ImageDisplay = require('components/imageDisplay');
 const styles = {
   margin: '0 auto',
   textAlign: 'center',
-  width: 500
+  width: '90%'
 }
 
 module.exports =
@@ -27,7 +27,7 @@ class App extends React.Component {
   render () {
     return (
       <div style={styles}>
-        <h1>gif grabbr</h1>
+        <h1>gif grabbr!</h1>
         <p>find a GIF on <a href='http://giphy.com'>giphy</a>. Keep pressing enter for more results.</p>
         <div>
           <SearchBar onSearch={this.handleSearch}/>
